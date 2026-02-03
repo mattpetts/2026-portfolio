@@ -1,7 +1,12 @@
+import { Contact, Hero, Projects, Skills } from '@/app/sections';
+
 export default function Home() {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      Hello World
-    </div>
-  );
+    return (
+        <div>
+            <Hero />
+            <Skills />
+            <Projects />
+            <Contact />
+        </div>
+    );
 }
