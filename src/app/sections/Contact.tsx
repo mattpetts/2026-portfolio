@@ -1,4 +1,4 @@
-import Section from "@/app/components/Section";
+import { Section } from "@/app/components";
 
 export const Contact = () => {
     return (
