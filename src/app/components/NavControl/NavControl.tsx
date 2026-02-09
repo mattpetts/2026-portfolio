@@ -4,10 +4,12 @@ import { useUI } from "@/app/context/UIProvider";
 import { motion } from "framer-motion";
 
 import DarkModeControl from "@/app/components/NavControl/DarkModeControl";
+import NavBarControl from "@/app/components/NavControl/NavBarControl";
+import NavButtonCircle from "@/app/components/NavControl/NavButtonCircle";
 
 const NavControl = () => {
 
-    const { toggleTheme, theme } = useUI();
+    const { toggleTheme, theme, toggleNav, isNavOpen } = useUI();
 
     return (
         <motion.div
@@ -25,9 +27,14 @@ const NavControl = () => {
                 <div>
                     <span className="text-xl font-black">mattpetts.code</span>
                 </div>
-                <button onClick={ toggleTheme } className={`p-2 rounded-full flex items-center justify-center bg-blue-400 dark:bg-slate-900 cursor-pointer transition-colors duration-200 ease-in overflow-hidden`}>
-                    <DarkModeControl theme={ theme } />
-                </button>
+                <div className="flex gap-2">
+                    <NavButtonCircle callback={ toggleTheme } classes="bg-blue-400 dark:bg-slate-900">
+                        <DarkModeControl theme={ theme } />
+                    </NavButtonCircle>
+                    <NavButtonCircle callback={ toggleNav } classes={`${ isNavOpen ? 'bg-red-400' : 'bg-green-400' }`}>
+                        <NavBarControl open={ isNavOpen } />
+                    </NavButtonCircle>
+                </div>
             </div>
         </motion.div>
     );
