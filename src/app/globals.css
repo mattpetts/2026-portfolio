@@ -20,3 +20,13 @@ body {
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+
+
+@layer utilities {
+    .text-gradient-brand {
+        @apply bg-clip-text text-transparent
+        bg-gradient-to-r from-cyan-400 to-yellow-200
+        dark:from-indigo-500 dark:to-pink-500;
+    }
+}
