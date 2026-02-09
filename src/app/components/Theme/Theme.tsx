@@ -11,7 +11,7 @@ const Theme = ({ children }: ThemeProps) => {
     const { theme } = useUI();
 
     return (
-        <div className={ `${ theme }` } >
+        <div className={ `${ theme } transition-all duration-200 ease-in-out` } >
             { children }
         </div>
     );

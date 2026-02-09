@@ -13,7 +13,7 @@ const NavControl = () => {
 
     return (
         <motion.div
-            className="w-full flex justify-center items-center fixed bottom-0 p-4"
+            className="w-full flex justify-center items-center fixed bottom-0 p-4 z-50"
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{
@@ -23,7 +23,7 @@ const NavControl = () => {
                 damping: 5
             }}
         >
-            <div className="w-fit px-2 py-2 pl-6 rounded-full flex justify-between items-center  bg-slate-900 text-white dark:bg-white dark:text-black gap-4 shadow-lg">
+            <div className="w-fit relative px-2 py-2 pl-6 rounded-full flex justify-between items-center  bg-slate-900 text-white dark:bg-white dark:text-black gap-4 shadow-lg">
                 <div>
                     <span className="text-xl font-black">mattpetts.code</span>
                 </div>
@@ -31,7 +31,7 @@ const NavControl = () => {
                     <NavButtonCircle callback={ toggleTheme } classes="bg-blue-400 dark:bg-slate-900">
                         <DarkModeControl theme={ theme } />
                     </NavButtonCircle>
-                    <NavButtonCircle callback={ toggleNav } classes={`${ isNavOpen ? 'bg-red-400' : 'bg-green-400' }`}>
+                    <NavButtonCircle callback={ toggleNav } classes={`${ isNavOpen ? 'bg-red-300' : 'bg-green-300' }`}>
                         <NavBarControl open={ isNavOpen } />
                     </NavButtonCircle>
                 </div>

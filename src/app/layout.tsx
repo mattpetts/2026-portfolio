@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { UIProvider } from "@/app/context/UIProvider";
-import { NavControl, Theme } from "@/app/components";
+import { Nav, NavControl, PullDown, Theme } from "@/app/components";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,11 +29,12 @@ export default function RootLayout({
             <UIProvider>
                 <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
                     <Theme>
-                        <div className="flex items-start justify-start">
-                            <div className="flex-1 relative">
-                                <NavControl />
+                        <div className="flex items-start flex-col justify-start">
+                            <Nav />
+                            <NavControl />
+                            <PullDown>
                                 {children}
-                            </div>
+                            </PullDown>
                         </div>
                     </Theme>
                 </body>
