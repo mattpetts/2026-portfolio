@@ -1,3 +1,4 @@
 export * from './Card';
-export * from './ProgressBar';
+export * from './NavControl';
 export * from './Section';
+export * from './Theme';

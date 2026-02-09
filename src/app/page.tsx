@@ -5,8 +5,6 @@ export default function Home() {
         <div>
             <Hero />
             <Skills />
-            <Projects />
-            <Contact />
         </div>
     );
 }
