@@ -23,17 +23,19 @@ const NavControl = () => {
                 damping: 5
             }}
         >
-            <div className="w-fit relative px-2 py-2 pl-6 rounded-full flex justify-between items-center  bg-slate-900 text-white dark:bg-white dark:text-black gap-4 shadow-lg">
-                <div>
-                    <span className="text-xl font-black">mattpetts.code</span>
-                </div>
-                <div className="flex gap-2">
-                    <NavButtonCircle callback={ toggleTheme } classes="bg-blue-400 dark:bg-slate-900">
-                        <DarkModeControl theme={ theme } />
-                    </NavButtonCircle>
-                    <NavButtonCircle callback={ toggleNav } classes={`${ isNavOpen ? 'bg-red-300' : 'bg-green-300' }`}>
-                        <NavBarControl open={ isNavOpen } />
-                    </NavButtonCircle>
+            <div className="p-1 rounded-full bg-gradient">
+                <div className="w-fit relative px-2 py-2 pl-6 rounded-full flex justify-between items-center  bg-slate-900 text-white dark:bg-white dark:text-black gap-4 shadow-lg">
+                    <div>
+                        <span className="text-xl font-black">mattpetts.code</span>
+                    </div>
+                    <div className="flex gap-2">
+                        <NavButtonCircle callback={ toggleTheme } classes="bg-blue-400 dark:bg-slate-900">
+                            <DarkModeControl theme={ theme } />
+                        </NavButtonCircle>
+                        <NavButtonCircle callback={ toggleNav } classes={`${ isNavOpen ? 'bg-red-300' : 'bg-green-300' }`}>
+                            <NavBarControl open={ isNavOpen } />
+                        </NavButtonCircle>
+                    </div>
                 </div>
             </div>
         </motion.div>

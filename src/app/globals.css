@@ -34,7 +34,37 @@ body {
         @apply bg-clip-text text-transparent
         bg-gradient-to-r from-yellow-200 via-orange-400 to-pink-400
         dark:from-indigo-500 dark:via-purple-400 dark:to-pink-500;
+    }
 
+    .bg-gradient {
+        @apply bg-gradient-to-r  from-indigo-500 via-purple-400 to-pink-500
+        dark:from-yellow-200 dark:via-orange-400 dark:to-pink-400;
+    }
+
+    .bg-gradient-inverse {
+        @apply bg-gradient-to-r from-yellow-200 via-orange-400 to-pink-400
+        dark:from-indigo-500 dark:via-purple-400 dark:to-pink-500;
+    }
+
+    .border-image-brand {
+        border-bottom-width: 3px;
+        border-style: solid;
+        border-image-slice: 1;
+        border-image-source: linear-gradient(
+            to right,
+            theme(colors.indigo.500),
+            theme(colors.purple.400),
+            theme(colors.pink.500)
+        );
+    }
+
+    .dark .border-image-brand {
+        border-image-source: linear-gradient(
+            to right,
+            theme(colors.yellow.200),
+            theme(colors.orange.400),
+            theme(colors.pink.400)
+        );
     }
 
     .animate-gradient {
