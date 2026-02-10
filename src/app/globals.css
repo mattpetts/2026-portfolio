@@ -26,8 +26,15 @@ body {
 @layer utilities {
     .text-gradient-brand {
         @apply bg-clip-text text-transparent
-        bg-gradient-to-r from-cyan-400 to-yellow-200
-        dark:from-indigo-500 dark:to-pink-500;
+        bg-gradient-to-r  from-indigo-500 via-purple-400 to-pink-500
+        dark:from-yellow-200 dark:via-orange-400 dark:to-pink-400;
+    }
+
+    .text-gradient-inverse {
+        @apply bg-clip-text text-transparent
+        bg-gradient-to-r from-yellow-200 via-orange-400 to-pink-400
+        dark:from-indigo-500 dark:via-purple-400 dark:to-pink-500;
+
     }
 
     .animate-gradient {
