@@ -29,4 +29,21 @@ body {
         bg-gradient-to-r from-cyan-400 to-yellow-200
         dark:from-indigo-500 dark:to-pink-500;
     }
+
+    .animate-gradient {
+        animation: gradient 10s ease infinite;
+        background-size: 400% 400%;
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
