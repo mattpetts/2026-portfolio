@@ -29,10 +29,10 @@ const NavControl = () => {
                         <span className="text-xl font-black">mattpetts.codes</span>
                     </div>
                     <div className="flex gap-2">
-                        <NavButtonCircle callback={ toggleTheme } classes="bg-blue-400 dark:bg-slate-900">
+                        <NavButtonCircle callback={ toggleTheme } classes="bg-blue-400 dark:bg-slate-900" label="Toggle Dark mode">
                             <DarkModeControl theme={ theme } />
                         </NavButtonCircle>
-                        <NavButtonCircle callback={ toggleNav } classes={`${ isNavOpen ? 'bg-red-300' : 'bg-green-300' }`}>
+                        <NavButtonCircle callback={ toggleNav } classes={`${ isNavOpen ? 'bg-red-300' : 'bg-green-300' }`} label="Toggle Nav Menu">
                             <NavBarControl open={ isNavOpen } />
                         </NavButtonCircle>
                     </div>

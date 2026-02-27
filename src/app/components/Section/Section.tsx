@@ -6,7 +6,7 @@ interface SectionProps {
 
 const Section = ({ classes, anchor, children }: SectionProps) => {
     return (
-        <section className={`w-full h-full sm:h-screen p-10 md:p-20 ${ classes }`} id={ `${ anchor }` }>
+        <section className={`w-full h-screen overflow-scroll p-10 md:p-20 ${ classes }`} id={ `${ anchor }` }>
             { children }
         </section>
     );

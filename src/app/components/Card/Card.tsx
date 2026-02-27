@@ -18,8 +18,8 @@ const Card = ({ title, description, github, url, featured = false }: CardProps) 
             </div>
             <p className="text-md sm:text-lg">{ description }</p>
             <div className='flex gap-2'>
-                {github && <HoverIcon href={ github } icon={ GithubOutlined } /> }
-                {url && <HoverIcon href={ url } icon={ WwwOutlined } /> }
+                {github && <HoverIcon href={ github } icon={ GithubOutlined } label="Github" /> }
+                {url && <HoverIcon href={ url } icon={ WwwOutlined } label="Website" /> }
             </div>
         </div>
     );
