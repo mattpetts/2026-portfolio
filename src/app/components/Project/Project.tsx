@@ -1,4 +1,6 @@
-import { div } from "framer-motion/client";
+import Link from 'next/link';
+import { Lineicons } from '@lineiconshq/react-lineicons';
+import { GithubOutlined, WwwOutlined } from '@lineiconshq/free-icons';
 
 interface ProjectProps {
     title: string;
@@ -16,6 +18,10 @@ const Project = ({ title, description, github, url, featured = false }: ProjectP
                 {featured && <span className="bg-gradient dark:bg-gradient-inverse text-white dark:text-slate-900 rounded px-2 py-1 text-xs font-black uppercase">In Progress</span>}
             </div>
             <p className="text-md sm:text-lg">{ description }</p>
+            <div className='flex gap-2'>
+                {github && <Link href={ github } target="_blank"><Lineicons icon={ GithubOutlined } /></Link>}
+                {url && <Link href={ url } target="_blank"><Lineicons icon={ WwwOutlined } /></Link>}
+            </div>
         </div>
     );
 };

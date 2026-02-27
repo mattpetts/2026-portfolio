@@ -5,7 +5,9 @@ const projects = [
         id: 1,
         title: "Cipher Sprint",
         description: "A code-breaking puzzle game where the user attempts to decipher as many words as possible in the time limit.",
-        featured: true
+        featured: true,
+        github: "test",
+        url: "testing"
     },
     {
         id: 2,
