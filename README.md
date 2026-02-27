@@ -14,6 +14,7 @@
 
 - ✅ Dark mode
 - ✅ Animated sections with Framer
+- 🚧 Dark mode cookie based
 - 🚧 Developer Blog
 - 🚧 CMS integration
 
