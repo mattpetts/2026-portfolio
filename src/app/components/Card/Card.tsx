@@ -1,8 +1,7 @@
-import Link from 'next/link';
-import { Lineicons } from '@lineiconshq/react-lineicons';
+import { HoverIcon } from '../HoverIcon';
 import { GithubOutlined, WwwOutlined } from '@lineiconshq/free-icons';
 
-interface ProjectProps {
+interface CardProps {
     title: string;
     description: string;
     github?: string;
@@ -10,7 +9,7 @@ interface ProjectProps {
     featured?: boolean
 }
 
-const Project = ({ title, description, github, url, featured = false }: ProjectProps) => {
+const Card = ({ title, description, github, url, featured = false }: CardProps) => {
     return (
         <div className={`border dark:border-slate-700 p-8 flex flex-col gap-4 ${ featured ? 'shadow-md border-image-brand' : 'border-gray-400' } hover:scale-101 transition-all duration-15o`}>
             <div className="flex justify-between items-center">
@@ -19,11 +18,11 @@ const Project = ({ title, description, github, url, featured = false }: ProjectP
             </div>
             <p className="text-md sm:text-lg">{ description }</p>
             <div className='flex gap-2'>
-                {github && <Link href={ github } target="_blank"><Lineicons icon={ GithubOutlined } /></Link>}
-                {url && <Link href={ url } target="_blank"><Lineicons icon={ WwwOutlined } /></Link>}
+                {github && <HoverIcon href={ github } icon={ GithubOutlined } /> }
+                {url && <HoverIcon href={ url } icon={ WwwOutlined } /> }
             </div>
         </div>
     );
 };
 
-export default Project;
+export default Card;
