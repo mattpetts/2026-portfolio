@@ -15,7 +15,8 @@ export const PROJECTS = [
         id: 3,
         title: "LightBoard",
         description: "A configurable Lightboard/grid app built with object-oriented vanilla JavaScript. Move your mouse over the grid to light up the tiles.",
-        github: "https://github.com/mattpetts/lightboard"
+        github: "https://github.com/mattpetts/lightboard",
+        url: "https://mattpetts.github.io/lightboard/"
     },
     {
         id: 4,

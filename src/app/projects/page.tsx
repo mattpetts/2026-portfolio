@@ -15,7 +15,7 @@ export default function Projects() {
                     <GradientTitle>
                         <h1 className="text-2xl sm:text-4xl font-black text-shadow-sm">What I'm working on</h1>
                     </GradientTitle>
-                    <div className="grid grid-cols-1 gap-4 mt-8 md:grid-cols-3 pb-20 sm:pb-0">
+                    <div className="grid grid-cols-1 gap-4 mt-8 md:grid-cols-3 pb-20 md:pb-0">
                         {PROJECTS.map(p => (
                             <Card { ...p } key={ p.id } />
                         ))}
