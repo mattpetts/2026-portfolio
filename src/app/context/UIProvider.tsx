@@ -2,6 +2,8 @@
 
 import React, { createContext, useContext, useMemo, useState, useCallback } from 'react';
 
+type Theme = 'light' | 'dark';
+
 type UIContextValue = {
     // Navbar / mobile menu
     isNavOpen: boolean;
@@ -17,17 +19,24 @@ type UIContextValue = {
 
 const UIContext = createContext<UIContextValue | null>(null);
 
-export function UIProvider({ children }: { children: React.ReactNode }) {
+function setThemeCookie(theme: Theme) {
+    document.cookie = `theme=${theme}; Path=/; Max-Age=31536000; SameSite=Lax`;
+}
+
+export function UIProvider({ initialTheme, children }: { initialTheme: Theme, children: React.ReactNode }) {
     const [isNavOpen, setIsNavOpen] = useState(false);
-    const [theme, setTheme] = useState<'light' | 'dark'>('light');
+    const [theme, setTheme] = useState<Theme>( initialTheme );
 
     const openNav = useCallback(() => setIsNavOpen(true), []);
     const closeNav = useCallback(() => setIsNavOpen(false), []);
     const toggleNav = useCallback(() => setIsNavOpen(v => !v), []);
 
     const toggleTheme = useCallback(() => {
-        setTheme(t => (t === 'light' ? 'dark' : 'light'));
-    }, []);
+        const next = theme === "light" ? "dark" : "light";
+        setTheme(next);
+        setThemeCookie(next);
+    }, [theme]);
+
 
     const value = useMemo(
         () => ({

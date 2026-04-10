@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -19,6 +20,10 @@ export const metadata: Metadata = {
   description: "I'm a front-end focused software engineer building fun things with Javascript, Typescript and NextJs!",
 };
 
+type ThemeType = "light" | "dark";
+
+const initialTheme: ThemeType = "light";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -26,7 +31,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <UIProvider>
+            <UIProvider initialTheme={ initialTheme }>
                 <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
                     <Theme>
                         <div className="flex items-start flex-col justify-start">
