@@ -1,8 +1,8 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
+import { setCookie } from '../utils/cookies';
 import React, { createContext, useContext, useMemo, useState, useCallback } from 'react';
-
-type Theme = 'light' | 'dark';
 
 type UIContextValue = {
     // Navbar / mobile menu
@@ -10,32 +10,31 @@ type UIContextValue = {
     openNav: () => void;
     closeNav: () => void;
     toggleNav: () => void;
-
-    // Theme (example)
-    theme: 'light' | 'dark';
+    theme: string;
     setTheme: (t: 'light' | 'dark') => void;
     toggleTheme: () => void;
 };
 
 const UIContext = createContext<UIContextValue | null>(null);
 
-function setThemeCookie(theme: Theme) {
-    document.cookie = `theme=${theme}; Path=/; Max-Age=31536000; SameSite=Lax`;
-}
 
-export function UIProvider({ initialTheme, children }: { initialTheme: Theme, children: React.ReactNode }) {
+export function UIProvider({ initTheme, children }: { initTheme: string, children: React.ReactNode }) {
+    console.log('initTheme', initTheme);
+
     const [isNavOpen, setIsNavOpen] = useState(false);
-    const [theme, setTheme] = useState<Theme>( initialTheme );
+    const [theme, setTheme] = useState(initTheme);
+    const router = useRouter();
 
     const openNav = useCallback(() => setIsNavOpen(true), []);
     const closeNav = useCallback(() => setIsNavOpen(false), []);
     const toggleNav = useCallback(() => setIsNavOpen(v => !v), []);
 
-    const toggleTheme = useCallback(() => {
+    const toggleTheme = () => {
         const next = theme === "light" ? "dark" : "light";
         setTheme(next);
-        setThemeCookie(next);
-    }, [theme]);
+        setCookie('theme', next);
+        router.refresh();
+    };
 
 
     const value = useMemo(

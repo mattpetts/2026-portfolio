@@ -1,4 +1,4 @@
-
+import { cookies } from 'next/headers';
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -20,20 +20,21 @@ export const metadata: Metadata = {
   description: "I'm a front-end focused software engineer building fun things with Javascript, Typescript and NextJs!",
 };
 
-type ThemeType = "light" | "dark";
 
-const initialTheme: ThemeType = "light";
-
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+    const cookieJar = await cookies();
+    const theme = cookieJar.get('theme')?.value ?? 'light';
+
     return (
         <html lang="en">
-            <UIProvider initialTheme={ initialTheme }>
+            <UIProvider initTheme={ theme }>
                 <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-                    <Theme>
+                    <Theme theme={ theme }>
                         <div className="flex items-start flex-col justify-start">
                             <Nav />
                             <NavControl />
