@@ -12,7 +12,7 @@ const iconMotion: Pick<HTMLMotionProps<"div">, "initial" | "animate" | "exit"> =
     }
 };
 
-const DarkModeControl = ({ theme }: { theme: "light" | "dark" }) => {
+const DarkModeControl = ({ theme }: { theme: string }) => {
     const isDark = theme === "dark";
 
     return (

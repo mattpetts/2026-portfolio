@@ -28,8 +28,11 @@ const bottom: Variants = {
     open: { rotate: -45, y: 0 },
 };
 
-export default function NavBarControl({ open, size = 20 }: HamburgerProps) {
-    const stroke = Math.max(2, Math.round(size / 10)); // scales nicely with size
+const NavBarControl = ({
+     open,
+     size = 20,
+ }: HamburgerProps) => {
+    const stroke = Math.max(2, Math.round(size / 10));
 
     return (
         <motion.svg
@@ -51,7 +54,7 @@ export default function NavBarControl({ open, size = 20 }: HamburgerProps) {
                 strokeWidth={stroke}
                 strokeLinecap="round"
                 variants={top}
-                transition={spring}
+                transition={spring as Transition}
                 style={{ transformOrigin: "12px 12px" }}
             />
 
@@ -79,9 +82,11 @@ export default function NavBarControl({ open, size = 20 }: HamburgerProps) {
                 strokeWidth={stroke}
                 strokeLinecap="round"
                 variants={bottom}
-                transition={spring}
+                transition={spring as Transition}
                 style={{ transformOrigin: "12px 12px" }}
             />
         </motion.svg>
     );
 }
+
+export default NavBarControl;
