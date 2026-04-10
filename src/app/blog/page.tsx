@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { GradientTitle, Section } from "../components";
+import { GradientTitle, Section } from "../../components";
 
 export const metadata: Metadata = {
   title: 'Blog | Matt Petts | Software Engineer',

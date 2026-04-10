@@ -2,8 +2,8 @@ import { cookies } from 'next/headers';
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { UIProvider } from "@/app/context/UIProvider";
-import { Nav, NavControl, PullDown, Theme } from "@/app/components";
+import { UIProvider } from "@/context/UIProvider";
+import { Nav, NavControl, PullDown, Theme } from "@/components";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

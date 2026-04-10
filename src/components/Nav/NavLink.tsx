@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useUI } from "@/app/context/UIProvider";
+import { useUI } from "@/context/UIProvider";
 
 interface NavLinkProps {
     path: string;

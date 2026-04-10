@@ -1,4 +1,4 @@
-import { Section, HoverIcon } from "@/app/components";
+import { Section, HoverIcon } from "@/components";
 import { GithubOutlined, LinkedinOutlined, Envelope1Outlined } from '@lineiconshq/free-icons';
 
 export default function Home() {

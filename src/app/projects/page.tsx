@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
-import { GradientTitle, Card, Section } from "@/app/components";
-import { PROJECTS } from '@/app/data/projects';
+import { GradientTitle, Card, Section } from "@/components";
+import { PROJECTS } from '@/data/projects';
  
 export const metadata: Metadata = {
   title: 'Projects | Matt Petts | Software Engineer',
