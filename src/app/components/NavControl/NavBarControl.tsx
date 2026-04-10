@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Transition } from "framer-motion";
 
 type HamburgerProps = {
     open: boolean;
@@ -32,7 +33,7 @@ const NavBarControl = ({
      open,
      size = 20,
  }: HamburgerProps) => {
-    const stroke = Math.max(2, Math.round(size / 10)); // scales nicely with size
+    const stroke = Math.max(2, Math.round(size / 10));
 
     return (
         <motion.svg
@@ -54,7 +55,7 @@ const NavBarControl = ({
                 strokeWidth={stroke}
                 strokeLinecap="round"
                 variants={top}
-                transition={spring}
+                transition={spring as Transition}
                 style={{ transformOrigin: "12px 12px" }}
             />
 
@@ -82,7 +83,7 @@ const NavBarControl = ({
                 strokeWidth={stroke}
                 strokeLinecap="round"
                 variants={bottom}
-                transition={spring}
+                transition={spring as Transition}
                 style={{ transformOrigin: "12px 12px" }}
             />
         </motion.svg>
