@@ -1,4 +1,4 @@
-import { GradientTitle, Section } from "./components";
+import { GradientTitle, Section } from "../components";
 
 export default function NotFound() {
     return (

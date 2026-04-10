@@ -3,9 +3,9 @@
 import { useUI } from "@/app/context/UIProvider";
 import { motion } from "framer-motion";
 
-import DarkModeControl from "@/app/components/NavControl/DarkModeControl";
-import NavBarControl from "@/app/components/NavControl/NavBarControl";
-import NavButtonCircle from "@/app/components/NavControl/NavButtonCircle";
+import DarkModeControl from "@/components/NavControl/DarkModeControl";
+import NavBarControl from "@/components/NavControl/NavBarControl";
+import NavButtonCircle from "@/components/NavControl/NavButtonCircle";
 
 const NavControl = () => {
 
