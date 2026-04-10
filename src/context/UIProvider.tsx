@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { setCookie } from '../utils/cookies';
 import React, { createContext, useContext, useMemo, useState, useCallback } from 'react';
+import { ThemeValues } from '@/types/Theme';
 
 type UIContextValue = {
     // Navbar / mobile menu
@@ -10,7 +11,7 @@ type UIContextValue = {
     openNav: () => void;
     closeNav: () => void;
     toggleNav: () => void;
-    theme: string;
+    theme: ThemeValues;
     setTheme: (t: 'light' | 'dark') => void;
     toggleTheme: () => void;
 };
@@ -18,7 +19,7 @@ type UIContextValue = {
 const UIContext = createContext<UIContextValue | null>(null);
 
 
-export function UIProvider({ initTheme, children }: { initTheme: string, children: React.ReactNode }) {
+export function UIProvider({ initTheme, children }: { initTheme: ThemeValues, children: React.ReactNode }) {
     const [isNavOpen, setIsNavOpen] = useState(false);
     const [theme, setTheme] = useState(initTheme);
     const router = useRouter();

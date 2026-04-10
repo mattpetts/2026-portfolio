@@ -1,7 +1,9 @@
 "use client";
 
+import { ThemeValues } from "@/types/Theme";
+
 interface ThemeProps {
-    theme: string;
+    theme: ThemeValues;
     children: React.ReactNode;
 }
 

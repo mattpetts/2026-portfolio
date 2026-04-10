@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { GradientTitle, Card, Section } from "@/components";
+import { ProjectSchema } from '@/types/DataSchema';
 import { PROJECTS } from '@/data/projects';
  
 export const metadata: Metadata = {

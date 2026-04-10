@@ -1,4 +1,6 @@
-export const PROJECTS = [
+import { ProjectSchema } from "@/types/DataSchema"
+
+export const PROJECTS: ProjectSchema[] = [
     {
         id: 1,
         title: "Cipher Sprint",

@@ -28,7 +28,7 @@ export default async function RootLayout({
 }>) {
 
     const cookieJar = await cookies();
-    const theme = cookieJar.get('theme')?.value ?? 'light';
+    const theme = cookieJar.get('theme')?.value === 'dark' ? 'dark' : 'light';
 
     return (
         <html lang="en">
