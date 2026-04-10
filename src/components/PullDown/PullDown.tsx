@@ -1,6 +1,6 @@
 "use client";
 
-import { useUI } from "@/app/context/UIProvider";
+import { useUI } from "@/context/UIProvider";
 import { motion } from "framer-motion";
 
 const PullDown = ({ children }: { children: React.ReactNode }) => {
