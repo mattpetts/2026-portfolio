@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { motion, type Transition, type Variants } from "framer-motion";
 
 type HamburgerProps = {
@@ -89,3 +88,5 @@ const NavBarControl = ({
         </motion.svg>
     );
 }
+
+export default NavBarControl;
