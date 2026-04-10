@@ -19,8 +19,6 @@ const UIContext = createContext<UIContextValue | null>(null);
 
 
 export function UIProvider({ initTheme, children }: { initTheme: string, children: React.ReactNode }) {
-    console.log('initTheme', initTheme);
-
     const [isNavOpen, setIsNavOpen] = useState(false);
     const [theme, setTheme] = useState(initTheme);
     const router = useRouter();
