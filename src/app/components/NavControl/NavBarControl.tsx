@@ -1,30 +1,30 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Transition } from "framer-motion";
+import { motion, type Transition, type Variants } from "framer-motion";
 
 type HamburgerProps = {
     open: boolean;
     size?: number;
 };
 
-const spring = {
+const spring: Transition = {
     type: "spring",
     stiffness: 900,
     damping: 35,
 };
 
-const top = {
+const top: Variants = {
     closed: { rotate: 0, y: -6 },
     open: { rotate: 45, y: 0 },
 };
 
-const middle = {
+const middle: Variants = {
     closed: { opacity: 1, scaleX: 1 },
     open: { opacity: 0, scaleX: 0 },
 };
 
-const bottom = {
+const bottom: Variants = {
     closed: { rotate: 0, y: 6 },
     open: { rotate: -45, y: 0 },
 };
@@ -89,5 +89,3 @@ const NavBarControl = ({
         </motion.svg>
     );
 }
-
-export default NavBarControl;

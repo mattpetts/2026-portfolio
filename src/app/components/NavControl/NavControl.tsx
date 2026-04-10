@@ -24,10 +24,7 @@ const NavControl = () => {
             }}
         >
             <div className="p-1 rounded-full bg-gradient">
-                <div className="w-fit relative px-2 py-2 pl-6 rounded-full flex justify-between items-center  bg-slate-900 text-white dark:bg-white dark:text-black gap-4 shadow-lg">
-                    <div>
-                        <span className="text-xl font-black">mattpetts.codes</span>
-                    </div>
+                <div className="w-fit relative p-2 rounded-full flex justify-between items-center  bg-slate-900 text-white dark:bg-white dark:text-black gap-4 shadow-lg">
                     <div className="flex gap-2">
                         <NavButtonCircle callback={ toggleTheme } classes="bg-blue-400 dark:bg-slate-900" label="Toggle Dark mode">
                             <DarkModeControl theme={ theme } />
