@@ -9,7 +9,8 @@ export const PROJECTS = [
         id: 2,
         title: "Dictionary App",
         description: "A single-page dictionary interface built with React and Vite and using the dictionaryapi.dev REST api.",
-        github: "https://github.com/mattpetts/dictionary-app"
+        github: "https://github.com/mattpetts/dictionary-app",
+        url: "https://dictionary-app-766.pages.dev/"
     },
     {
         id: 3,
@@ -29,5 +30,18 @@ export const PROJECTS = [
         title: "Rock, Paper, Scissors Node ",
         description: "A quick NodeJs build of Rock Paper Scissors that you can play in your IDE terminal.",
         github: "https://github.com/mattpetts/Rock-Paper-Scissors-Node"
+    },
+    {
+        id: 6,
+        title: "Progress Tracker",
+        description: "A small React/Vite project that tracks time remaining until key events",
+        github: "https://github.com/mattpetts/progress-tracker",
+        url: "https://progress-tracker-9oq.pages.dev/"
+    },
+    {
+        id: 7,
+        title: "PokeAPI",
+        description: "A lightweight API built with Hono and using Zod validation",
+        github: "https://github.com/mattpetts/poke-api",
     },
 ]
